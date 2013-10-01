@@ -37,8 +37,8 @@ set autoread          " Automatically reads a file that has been changed on disk
 set hidden            " Hide buffers when they are abandoned
 set mouse=a           " Enable mouse usage (all modes)
 set nu                " Set line numbering, but only in the current split
-:au WinEnter * :setlocal nu
-:au WinLeave * :setlocal nonu
+":au WinEnter * :setlocal nu
+":au WinLeave * :setlocal nonu
 set nobackup          " Remove backup/swap files (although they can be nice)
 set noswapfile
 set noerrorbells      " No beeping
@@ -50,9 +50,9 @@ set splitbelow        " New horizontal splits should be on the bottom
 set relativenumber  " Not sure if I want this yet
 "set showcmd          " Show (partial) command in status line.
 syntax on             " Syntax highlighting
-set colorcolumn=80    " No line should be more than 80 chars
-highlight ColorColumn ctermbg=7 
-highlight ColorColumn guibg=Grey
+"set colorcolumn=80    " No line should be more than 80 chars
+"highlight ColorColumn ctermbg=7 
+"highlight ColorColumn guibg=Grey
 
 " Set Omni-completion
 set ofu=syntaxcomplete#Complete
@@ -102,10 +102,10 @@ autocmd BufWinEnter .* silent loadview
 " ===================================== "
 
 set expandtab
-set softtabstop=2
+set softtabstop=4
 set autoindent
-set tabstop=2            " Number of spaces a tab accounts for
-set shiftwidth=2         " Number of spaces for autoindent
+set tabstop=4            " Number of spaces a tab accounts for
+set shiftwidth=4         " Number of spaces for autoindent
 
 " Display tabs and trailing spaces visually
 set list listchars=tab:\ \ ,trail:·
