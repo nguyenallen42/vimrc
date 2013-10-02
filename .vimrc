@@ -51,14 +51,14 @@ set relativenumber  " Not sure if I want this yet
 "set showcmd          " Show (partial) command in status line.
 syntax on             " Syntax highlighting
 "set colorcolumn=80    " No line should be more than 80 chars
-"highlight ColorColumn ctermbg=7 
+"highlight ColorColumn ctermbg=7
 "highlight ColorColumn guibg=Grey
 
 " Set Omni-completion
 set ofu=syntaxcomplete#Complete
 let g:SuperTabDefaultCompletionType = "context"
 
-" Set a better status line 
+" Set a better status line
 set stl=%f\ %m\ %r\ Line:\ %l/%L[%p%%]\ Col:\ %c\ Buf:\ #%n\ [%b][0x%B]
 
 " Automatically saves GVim when switching window focus
@@ -111,7 +111,7 @@ set shiftwidth=4         " Number of spaces for autoindent
 set list listchars=tab:\ \ ,trail:·
 
 
-" ======== Remappings/ Plugins ======== "
+" ========= Simple Remappings ========= "
 " ===================================== "
 
 " Change the <leader> key to ,
@@ -122,12 +122,6 @@ cnoreabbrev W w
 cnoreabbrev WQ wq
 cnoreabbrev Wq wq
 cnoreabbrev Q q
-
-" Turn on/off NERDTree with <F1>
-nmap <F1> :NERDTreeToggle<CR>
-
-" Remap vim-flake8 to F2
-autocmd FileType python map <buffer> <F2> :call Flake8()<CR>
 
 " Remapping arrow keys to move along splits
 nnoremap <Up>        <C-W>k
@@ -151,3 +145,30 @@ nnoremap <silent> <leader>p "+p
 " Reselects visual blocks after indentation
 vnoremap < <gv
 vnoremap > >gv
+
+" ===== Plugins/Plugin Remappings ===== "
+" ===================================== "
+
+" Installing Ctrl-P for fast file opening
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+
+
+" Syntastic ignore Horn files
+let g:syntastic_mode_map = { 'mode': 'active',
+                               \ 'passive_filetypes': ['hn'] }
+
+" Using Powerline fonts for Airline
+let g:airline_powerline_fonts=1
+
+" Turn on/off NERDTree with <F1>
+nmap <F1> :NERDTreeToggle<CR>
+
+" Remap vim-flake8 to F2
+autocmd FileType python map <buffer> <F2> :call Flake8()<CR>
+
+
+" ========== Language Syntax ========== "
+" ===================================== "
+
+" Horn files for CS164
+autocmd BufNewFile,BufReadPost *.hn set filetype=cpp
